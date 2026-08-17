@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Knowledge Hub - แหล่งความรู้</title>
+    <title>Knowledge Hub - แหล่งรวมความรู้</title>
+
+    <meta name="description"
+          content="Knowledge Hub แหล่งรวมความรู้ด้านไฟฟ้า คอมพิวเตอร์ งานช่าง ยานยนต์ และเทคโนโลยี">
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -21,129 +25,568 @@
         header {
             background: #111827;
             color: white;
-            padding: 25px 20px;
+            padding: 55px 20px;
         }
 
-        .header-content {
+        .container {
             max-width: 1000px;
             margin: auto;
+            padding: 0 20px;
         }
 
         header h1 {
-            margin: 0 0 8px;
-            font-size: 28px;
+            font-size: 42px;
+            margin: 0 0 10px;
         }
 
         header p {
             margin: 0;
             color: #d1d5db;
+            font-size: 18px;
+        }
+
+        .search-area {
+            margin-top: 30px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 17px 20px;
+            font-size: 17px;
+            border: none;
+            border-radius: 12px;
+            outline: none;
         }
 
         main {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .search {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 30px;
+            padding-top: 35px;
+            padding-bottom: 50px;
         }
 
         h2 {
-            margin-bottom: 15px;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            margin-top: 0;
+            font-size: 28px;
         }
 
         .category {
+            margin-top: 30px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            display: block;
             background: white;
-            padding: 25px;
-            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 22px;
             text-decoration: none;
             color: #222;
-            border: 1px solid #e5e7eb;
             transition: 0.2s;
         }
 
-        .category:hover {
+        .card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
-        .category h3 {
-            margin-top: 0;
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
         }
 
-        .category p {
+        .card h3 {
+            margin: 0 0 7px;
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 0;
             color: #666;
-            margin-bottom: 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .search-results {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .result-count {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .no-result {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            color: #666;
+        }
+
+        .hidden {
+            display: none !important;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 35px 20px;
             color: #777;
+            font-size: 14px;
         }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
 <header>
-    <div class="header-content">
+
+    <div class="container">
+
         <h1>Knowledge Hub</h1>
-        <p>แหล่งรวมความรู้ที่เข้าใจง่าย</p>
+
+        <p>
+            แหล่งรวมความรู้ที่เข้าใจง่าย
+            และค้นหาได้ในที่เดียว
+        </p>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search-box"
+                placeholder="🔎 ค้นหาความรู้ เช่น กฎของโอห์ม, มัลติมิเตอร์..."
+                autocomplete="off"
+            >
+
+        </div>
+
     </div>
+
 </header>
 
-<main>
 
-    <input
-        class="search"
-        type="text"
-        placeholder="ค้นหาข้อมูล..."
-    >
+<main class="container">
 
-    <h2>หมวดหมู่</h2>
+    <!-- หน้าหมวดหมู่ -->
 
-    <div class="categories">
+    <div id="categories">
 
-        <a class="category" href="electricity.html">
-            <h3>⚡ ไฟฟ้า</h3>
-            <p>ความรู้เกี่ยวกับไฟฟ้า วงจร อุปกรณ์ และการคำนวณ</p>
-        </a>
+        <h2>หมวดหมู่ความรู้</h2>
 
-        <a class="category" href="#">
-            <h3>💻 คอมพิวเตอร์</h3>
-            <p>CPU, GPU, RAM, SSD และเทคโนโลยีคอมพิวเตอร์</p>
-        </a>
 
-        <a class="category" href="#">
-            <h3>📱 เทคโนโลยี</h3>
-            <p>มือถือ อินเทอร์เน็ต ซอฟต์แวร์ และเทคโนโลยีต่าง ๆ</p>
-        </a>
+        <!-- ไฟฟ้า -->
 
-        <a class="category" href="#">
-            <h3>🚗 ยานยนต์</h3>
-            <p>รถยนต์ เครื่องยนต์ EV และระบบต่าง ๆ</p>
-        </a>
+        <section class="category">
+
+            <div class="category-title">
+                ⚡ ไฟฟ้า
+            </div>
+
+            <div class="cards">
+
+                <a class="card"
+                   href="electricity.html">
+
+                    <div class="card-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        พื้นฐานไฟฟ้า
+                    </h3>
+
+                    <p>
+                        เรียนรู้พื้นฐานไฟฟ้า
+                        ตั้งแต่ AC/DC กฎของโอห์ม
+                        ไปจนถึงเครื่องมือวัด
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- คอมพิวเตอร์ -->
+
+        <section class="category">
+
+            <div class="category-title">
+                🖥️ คอมพิวเตอร์
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🖥️
+                    </div>
+
+                    <h3>
+                        คอมพิวเตอร์
+                    </h3>
+
+                    <p>
+                        เนื้อหากำลังจะมา
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ยานยนต์ -->
+
+        <section class="category">
+
+            <div class="category-title">
+                🚗 ยานยนต์
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🚗
+                    </div>
+
+                    <h3>
+                        ยานยนต์
+                    </h3>
+
+                    <p>
+                        เนื้อหากำลังจะมา
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- งานช่าง -->
+
+        <section class="category">
+
+            <div class="category-title">
+                🔧 งานช่าง
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🔧
+                    </div>
+
+                    <h3>
+                        งานช่าง
+                    </h3>
+
+                    <p>
+                        เนื้อหากำลังจะมา
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </div>
+
+
+    <!-- ผลการค้นหา -->
+
+    <section
+        id="searchResults"
+        class="search-results">
+
+        <h2>
+            ผลการค้นหา
+        </h2>
+
+        <div
+            id="resultCount"
+            class="result-count">
+        </div>
+
+        <div
+            id="results"
+            class="cards">
+        </div>
+
+    </section>
 
 </main>
 
+
 <footer>
-    © 2026 Knowledge Hub
+
+    Knowledge Hub © 2026
+
 </footer>
+
+
+<script>
+
+    /*
+        รายการบทความที่สามารถค้นหาได้
+
+        ถ้าเพิ่มบทความใหม่
+        ให้เพิ่มข้อมูลลงในรายการนี้
+    */
+
+    const articles = [
+
+        {
+            title: "AC และ DC คืออะไร?",
+            description: "ทำความเข้าใจความแตกต่างระหว่างไฟฟ้ากระแสสลับและกระแสตรง",
+            category: "ไฟฟ้า",
+            url: "ac-dc.html"
+        },
+
+        {
+            title: "กฎของโอห์มคืออะไร?",
+            description: "เรียนรู้ความสัมพันธ์ระหว่างแรงดัน กระแส และความต้านทาน",
+            category: "ไฟฟ้า",
+            url: "ohms-law.html"
+        },
+
+        {
+            title: "แรงดันไฟฟ้าคืออะไร?",
+            description: "ทำความเข้าใจแรงดันไฟฟ้าและหน่วย Volt",
+            category: "ไฟฟ้า",
+            url: "voltage.html"
+        },
+
+        {
+            title: "กระแสไฟฟ้าคืออะไร?",
+            description: "ทำความเข้าใจกระแสไฟฟ้าและหน่วย Ampere",
+            category: "ไฟฟ้า",
+            url: "current.html"
+        },
+
+        {
+            title: "ความต้านทานคืออะไร?",
+            description: "เรียนรู้ความหมายของความต้านทานและหน่วย Ohm",
+            category: "ไฟฟ้า",
+            url: "resistance.html"
+        },
+
+        {
+            title: "กำลังไฟฟ้าคืออะไร?",
+            description: "เรียนรู้เรื่องกำลังไฟฟ้า Watt และการคำนวณพื้นฐาน",
+            category: "ไฟฟ้า",
+            url: "power.html"
+        },
+
+        {
+            title: "วิธีอ่านค่าสีตัวต้านทาน",
+            description: "เรียนรู้วิธีอ่านค่าความต้านทานจากแถบสี",
+            category: "ไฟฟ้า",
+            url: "resistor-color.html"
+        },
+
+        {
+            title: "มัลติมิเตอร์วัดอะไรได้บ้าง?",
+            description: "ทำความรู้จักฟังก์ชันพื้นฐานของมัลติมิเตอร์",
+            category: "ไฟฟ้า",
+            url: "multimeter-measure.html"
+        },
+
+        {
+            title: "สัญลักษณ์ทางไฟฟ้าที่ควรรู้",
+            description: "ทำความรู้จักสัญลักษณ์พื้นฐานในวงจรไฟฟ้า",
+            category: "ไฟฟ้า",
+            url: "electrical-symbols.html"
+        }
+
+    ];
+
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const categories =
+        document.getElementById("categories");
+
+    const searchResults =
+        document.getElementById("searchResults");
+
+    const results =
+        document.getElementById("results");
+
+    const resultCount =
+        document.getElementById("resultCount");
+
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            const keyword =
+                this.value.trim().toLowerCase();
+
+
+            /*
+                ถ้าไม่ได้ค้นหา
+                ให้กลับไปแสดงหมวดหมู่
+            */
+
+            if (keyword === "") {
+
+                categories.style.display = "block";
+
+                searchResults.style.display = "none";
+
+                results.innerHTML = "";
+
+                return;
+
+            }
+
+
+            /*
+                ค้นหาจาก
+                ชื่อบทความ
+                คำอธิบาย
+                และหมวดหมู่
+            */
+
+            const found =
+                articles.filter(function (article) {
+
+                    return (
+
+                        article.title
+                            .toLowerCase()
+                            .includes(keyword)
+
+                        ||
+
+                        article.description
+                            .toLowerCase()
+                            .includes(keyword)
+
+                        ||
+
+                        article.category
+                            .toLowerCase()
+                            .includes(keyword)
+
+                    );
+
+                });
+
+
+            categories.style.display = "none";
+
+            searchResults.style.display = "block";
+
+
+            resultCount.textContent =
+                "พบ " + found.length + " รายการ";
+
+
+            results.innerHTML = "";
+
+
+            /*
+                ไม่มีผลการค้นหา
+            */
+
+            if (found.length === 0) {
+
+                results.innerHTML = `
+                    <div class="no-result">
+                        ไม่พบข้อมูลที่ค้นหา
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+            /*
+                สร้างการ์ดผลการค้นหา
+            */
+
+            found.forEach(function (article) {
+
+                const card =
+                    document.createElement("a");
+
+                card.className = "card";
+
+                card.href = article.url;
+
+                card.innerHTML = `
+
+                    <div class="card-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        ${article.title}
+                    </h3>
+
+                    <p>
+                        ${article.description}
+                    </p>
+
+                `;
+
+                results.appendChild(card);
+
+            });
+
+        }
+
+    );
+
+</script>
 
 </body>
 </html>
