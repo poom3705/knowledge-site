@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>วิธีอ่านค่าสีตัวต้านทาน - Knowledge Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d1d5db;
+        }
+
+        main {
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #2563eb;
+        }
+
+        .article {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+        }
+
+        h2 {
+            margin-top: 35px;
+            font-size: 24px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            font-size: 20px;
+        }
+
+        .formula {
+            background: #f3f4f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .important {
+            background: #f3f4f6;
+            border-left: 4px solid #374151;
+            padding: 15px 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .example {
+            background: #f3f4f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .color-box {
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+            border-radius: 6px;
+            vertical-align: middle;
+            border: 1px solid #aaa;
+        }
+
+        .black {
+            background: black;
+        }
+
+        .brown {
+            background: #8b4513;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .violet {
+            background: violet;
+        }
+
+        .gray {
+            background: gray;
+        }
+
+        .white {
+            background: white;
+        }
+
+        .gold {
+            background: gold;
+        }
+
+        .silver {
+            background: silver;
+        }
+
+        .summary {
+            margin-top: 35px;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+
+            .article {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 8px 5px;
+            }
+
+            .formula {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>วิธีอ่านค่าสีตัวต้านทาน</h1>
+        <p>เข้าใจแถบสีบนตัวต้านทานแบบง่าย ๆ</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <a class="back" href="electricity.html">
+        ← กลับไปหมวดไฟฟ้า
+    </a>
+
+    <article class="article">
+
+        <p>
+            ตัวต้านทานบางชนิดจะมี
+            <strong>แถบสี</strong>
+            อยู่บนตัวอุปกรณ์
+            แทนที่จะพิมพ์ค่าความต้านทานเป็นตัวเลขโดยตรง
+        </p>
+
+        <p>
+            แถบสีเหล่านี้สามารถใช้บอกค่า
+            <strong>ความต้านทาน</strong>
+            และในบางกรณียังบอกค่าความคลาดเคลื่อน
+            ของตัวต้านทานได้อีกด้วย
+        </p>
+
+        <h2>แถบสีตัวต้านทานคืออะไร?</h2>
+
+        <p>
+            ตัวต้านทานแบบแถบสีที่พบได้ทั่วไป
+            มักมี 4 แถบ หรือ 5 แถบ
+        </p>
+
+        <p>
+            ตัวต้านทานแบบ 4 แถบจะมีความหมายโดยทั่วไปดังนี้
+        </p>
+
+        <ul>
+            <li>แถบที่ 1 = ตัวเลขหลักแรก</li>
+            <li>แถบที่ 2 = ตัวเลขหลักที่สอง</li>
+            <li>แถบที่ 3 = ตัวคูณ</li>
+            <li>แถบที่ 4 = ค่าความคลาดเคลื่อน</li>
+        </ul>
+
+        <div class="important">
+            <strong>จำง่าย ๆ:</strong>
+            สองแถบแรกเป็นตัวเลข
+            แถบที่สามเป็นตัวคูณ
+            และแถบสุดท้ายมักเป็นค่าความคลาดเคลื่อน
+        </div>
+
+        <h2>ตารางสีตัวต้านทาน</h2>
+
+        <table>
+
+            <tr>
+                <th>สี</th>
+                <th>ตัวเลข</th>
+                <th>ตัวคูณ</th>
+            </tr>
+
+            <tr>
+                <td><span class="color-box black"></span><br>ดำ</td>
+                <td>0</td>
+                <td>×1</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box brown"></span><br>น้ำตาล</td>
+                <td>1</td>
+                <td>×10</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box red"></span><br>แดง</td>
+                <td>2</td>
+                <td>×100</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box orange"></span><br>ส้ม</td>
+                <td>3</td>
+                <td>×1,000</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box yellow"></span><br>เหลือง</td>
+                <td>4</td>
+                <td>×10,000</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box green"></span><br>เขียว</td>
+                <td>5</td>
+                <td>×100,000</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box blue"></span><br>น้ำเงิน</td>
+                <td>6</td>
+                <td>×1,000,000</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box violet"></span><br>ม่วง</td>
+                <td>7</td>
+                <td>×10,000,000</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box gray"></span><br>เทา</td>
+                <td>8</td>
+                <td>×100,000,000</td>
+            </tr>
+
+            <tr>
+                <td><span class="color-box white"></span><br>ขาว</td>
+                <td>9</td>
+                <td>×1,000,000,000</td>
+            </tr>
+
+        </table>
+
+        <h2>ค่าความคลาดเคลื่อน (Tolerance)</h2>
+
+        <p>
+            แถบสุดท้ายของตัวต้านทานแบบ 4 แถบ
+            มักใช้บอกค่าความคลาดเคลื่อน
+        </p>
+
+        <table>
+
+            <tr>
+                <th>สี</th>
+                <th>ค่าความคลาดเคลื่อน</th>
+            </tr>
+
+            <tr>
+                <td>น้ำตาล</td>
+                <td>±1%</td>
+            </tr>
+
+            <tr>
+                <td>แดง</td>
+                <td>±2%</td>
+            </tr>
+
+            <tr>
+                <td>เขียว</td>
+                <td>±0.5%</td>
+            </tr>
+
+            <tr>
+                <td>น้ำเงิน</td>
+                <td>±0.25%</td>
+            </tr>
+
+            <tr>
+                <td>ม่วง</td>
+                <td>±0.1%</td>
+            </tr>
+
+            <tr>
+                <td>ทอง</td>
+                <td>±5%</td>
+            </tr>
+
+            <tr>
+                <td>เงิน</td>
+                <td>±10%</td>
+            </tr>
+
+        </table>
+
+        <h2>วิธีอ่านตัวต้านทาน 4 แถบ</h2>
+
+        <p>
+            สมมติว่าตัวต้านทานมีแถบสีดังนี้
+        </p>
+
+        <div class="formula">
+            น้ำตาล → ดำ → แดง → ทอง
+        </div>
+
+        <p>
+            แถบแรก น้ำตาล = 1
+        </p>
+
+        <p>
+            แถบที่สอง ดำ = 0
+        </p>
+
+        <p>
+            ดังนั้นตัวเลขสองหลักแรกคือ
+        </p>
+
+        <div class="formula">
+            10
+        </div>
+
+        <p>
+            แถบที่สาม สีแดง
+            หมายถึงตัวคูณ ×100
+        </p>
+
+        <div class="formula">
+            10 × 100 = 1,000 Ω
+        </div>
+
+        <p>
+            แถบสุดท้าย สีทอง
+            หมายถึงค่าความคลาดเคลื่อน ±5%
+        </p>
+
+        <p>
+            ดังนั้นตัวต้านทานตัวนี้คือ
+        </p>
+
+        <div class="formula">
+            1,000 Ω ±5%
+        </div>
+
+        <p>
+            หรือสามารถเขียนเป็น
+        </p>
+
+        <div class="formula">
+            1 kΩ ±5%
+        </div>
+
+        <h2>ตัวอย่างอีกหนึ่งตัว</h2>
+
+        <div class="example">
+
+            <p>
+                สมมติแถบสีคือ
+            </p>
+
+            <div class="formula">
+                แดง → แดง → น้ำตาล → ทอง
+            </div>
+
+            <p>
+                แดง = 2
+            </p>
+
+            <p>
+                แดง = 2
+            </p>
+
+            <p>
+                น้ำตาล = ×10
+            </p>
+
+            <div class="formula">
+                22 × 10 = 220 Ω
+            </div>
+
+            <p>
+                ทอง = ±5%
+            </p>
+
+            <p>
+                ดังนั้นค่าคือ
+            </p>
+
+            <div class="formula">
+                220 Ω ±5%
+            </div>
+
+        </div>
+
+        <h2>ตัวต้านทาน 5 แถบ</h2>
+
+        <p>
+            ตัวต้านทานแบบ 5 แถบ
+            จะมีตัวเลขสำคัญ 3 หลักก่อนตัวคูณ
+        </p>
+
+        <ul>
+            <li>แถบที่ 1 = ตัวเลขหลักที่ 1</li>
+            <li>แถบที่ 2 = ตัวเลขหลักที่ 2</li>
+            <li>แถบที่ 3 = ตัวเลขหลักที่ 3</li>
+            <li>แถบที่ 4 = ตัวคูณ</li>
+            <li>แถบที่ 5 = ค่าความคลาดเคลื่อน</li>
+        </ul>
+
+        <div class="example">
+
+            <p>
+                ตัวอย่าง
+            </p>
+
+            <div class="formula">
+                น้ำตาล → ดำ → ดำ → แดง → น้ำตาล
+            </div>
+
+            <p>
+                สามตัวแรกคือ
+                <strong>100</strong>
+            </p>
+
+            <p>
+                แดง = ×100
+            </p>
+
+            <div class="formula">
+                100 × 100 = 10,000 Ω
+            </div>
+
+            <p>
+                น้ำตาล = ±1%
+            </p>
+
+            <p>
+                ดังนั้นค่าคือ
+            </p>
+
+            <div class="formula">
+                10 kΩ ±1%
+            </div>
+
+        </div>
+
+        <h2>จะรู้ได้อย่างไรว่าต้องอ่านจากด้านไหน?</h2>
+
+        <p>
+            โดยทั่วไปแถบค่าความคลาดเคลื่อน
+            เช่น ทองหรือเงิน
+            มักจะอยู่ห่างจากแถบอื่นเล็กน้อย
+        </p>
+
+        <p>
+            ให้ใช้แถบที่อยู่ใกล้กันเป็นจุดสังเกต
+            แล้วอ่านจากด้านตรงข้ามเข้ามา
+        </p>
+
+        <div class="important">
+            <strong>ข้อควรระวัง:</strong>
+            ตัวต้านทานบางชนิดอาจมีรูปแบบการทำเครื่องหมายแตกต่างกัน
+            หากไม่แน่ใจ ควรตรวจสอบด้วยมัลติมิเตอร์
+            หรือดูข้อมูลจากผู้ผลิต
+        </div>
+
+        <h2>วัดตัวต้านทานด้วยมัลติมิเตอร์</h2>
+
+        <p>
+            หากอ่านแถบสีแล้วไม่แน่ใจ
+            สามารถใช้มัลติมิเตอร์วัดค่าได้
+        </p>
+
+        <p>
+            ตั้งมัลติมิเตอร์ไปที่โหมด
+            <strong>Ω</strong>
+            แล้ววัดที่ขาทั้งสองของตัวต้านทาน
+        </p>
+
+        <p>
+            หากตัวต้านทานยังอยู่ในวงจร
+            อุปกรณ์อื่นในวงจรอาจทำให้ค่าที่วัดได้แตกต่างจากค่าจริง
+        </p>
+
+        <p>
+            ดังนั้นหากต้องการวัดค่าให้แม่นยำ
+            ควรแยกตัวต้านทานออกจากวงจร
+            หรืออย่างน้อยยกขาออกหนึ่งด้านก่อนวัด
+        </p>
+
+        <div class="important">
+            <strong>สำคัญ:</strong>
+            ต้องปิดแหล่งจ่ายไฟก่อนวัดความต้านทาน
+        </div>
+
+        <div class="summary">
+
+            <h2>สรุป</h2>
+
+            <p>
+                ตัวต้านทานแบบแถบสีใช้สีในการบอกค่าความต้านทาน
+                และค่าความคลาดเคลื่อน
+            </p>
+
+            <p>
+                สำหรับตัวต้านทาน 4 แถบ
+            </p>
+
+            <div class="formula">
+                ตัวเลข → ตัวเลข → ตัวคูณ → Tolerance
+            </div>
+
+            <p>
+                ตัวอย่าง
+            </p>
+
+            <div class="formula">
+                น้ำตาล → ดำ → แดง → ทอง
+            </div>
+
+            <div class="formula">
+                10 × 100 = 1,000 Ω ±5%
+            </div>
+
+            <p>
+                หรือ
+                <strong>1 kΩ ±5%</strong>
+            </p>
+
+            <p>
+                เมื่อเข้าใจการอ่านค่าตัวต้านทานแล้ว
+                เราสามารถไปต่อกับอุปกรณ์พื้นฐานอื่น ๆ
+                ที่พบในวงจรไฟฟ้าได้
+            </p>
+
+        </div>
+
+    </article>
+
+</main>
+
+<footer>
+    © 2026 Knowledge Hub
+</footer>
+
+</body>
+</html>
