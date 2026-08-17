@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>กำลังไฟฟ้าคืออะไร? - Knowledge Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 30px;
+            line-height: 1.4;
+        }
+
+        header p {
+            margin: 0;
+            color: #d1d5db;
+        }
+
+        main {
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #2563eb;
+        }
+
+        .article {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .article h2 {
+            margin-top: 35px;
+            margin-bottom: 12px;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        .article h3 {
+            margin-top: 25px;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .article p {
+            margin: 12px 0;
+        }
+
+        .article ul {
+            padding-left: 25px;
+        }
+
+        .article li {
+            margin-bottom: 7px;
+        }
+
+        .formula {
+            background: #f3f4f6;
+            padding: 22px;
+            margin: 25px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f3f4f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .important {
+            background: #f3f4f6;
+            border-left: 4px solid #374151;
+            padding: 15px 18px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .summary {
+            margin-top: 35px;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .article {
+                padding: 20px;
+            }
+
+            .article h2 {
+                font-size: 21px;
+            }
+
+            .article h3 {
+                font-size: 18px;
+            }
+
+            .formula {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>กำลังไฟฟ้าคืออะไร?</h1>
+        <p>ทำความเข้าใจ Power, Watt และการคำนวณกำลังไฟฟ้า</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <a class="back" href="electricity.html">
+        ← กลับไปหมวดไฟฟ้า
+    </a>
+
+    <article class="article">
+
+        <p>
+            <strong>กำลังไฟฟ้า (Electrical Power)</strong>
+            เป็นอีกหนึ่งเรื่องพื้นฐานที่สำคัญมากในงานไฟฟ้า
+            เพราะช่วยให้เรารู้ว่าอุปกรณ์ไฟฟ้ากำลังใช้หรือถ่ายโอนพลังงาน
+            ในอัตราเท่าใด
+        </p>
+
+        <p>
+            เรามักเห็นตัวเลขกำลังไฟฟ้าเขียนอยู่บนอุปกรณ์
+            เช่น 5 W, 60 W, 1,000 W หรือ 2,000 W
+        </p>
+
+        <p>
+            ตัวเลขเหล่านี้มีความหมายอย่างไร?
+            และเกี่ยวข้องกับแรงดันและกระแสอย่างไร?
+        </p>
+
+
+        <h2>กำลังไฟฟ้าคืออะไร?</h2>
+
+        <p>
+            <strong>กำลังไฟฟ้า (Power)</strong>
+            คืออัตราการถ่ายโอนหรือใช้พลังงานไฟฟ้าต่อหน่วยเวลา
+        </p>
+
+        <p>
+            สัญลักษณ์ของกำลังไฟฟ้าคือ
+            <strong>P</strong>
+        </p>
+
+        <p>
+            หน่วยของกำลังไฟฟ้าคือ
+            <strong>วัตต์ (Watt)</strong>
+            ใช้สัญลักษณ์ว่า <strong>W</strong>
+        </p>
+
+        <div class="important">
+            <strong>จำง่าย ๆ:</strong>
+            Power = กำลังไฟฟ้า = P = วัตต์ (W)
+        </div>
+
+
+        <h2>สูตรกำลังไฟฟ้าพื้นฐาน</h2>
+
+        <p>
+            สูตรพื้นฐานที่ใช้คำนวณกำลังไฟฟ้าคือ
+        </p>
+
+        <div class="formula">
+            P = V × I
+        </div>
+
+        <p>
+            โดย
+        </p>
+
+        <ul>
+            <li><strong>P</strong> = กำลังไฟฟ้า หน่วยวัตต์ (W)</li>
+            <li><strong>V</strong> = แรงดันไฟฟ้า หน่วยโวลต์ (V)</li>
+            <li><strong>I</strong> = กระแสไฟฟ้า หน่วยแอมแปร์ (A)</li>
+        </ul>
+
+
+        <h2>ตัวอย่างการคำนวณ</h2>
+
+        <div class="example">
+
+            <p>
+                สมมติว่าอุปกรณ์ไฟฟ้าตัวหนึ่งทำงานที่
+                <strong>12 V</strong>
+                และใช้กระแส
+                <strong>2 A</strong>
+            </p>
+
+            <p>
+                ต้องการหากำลังไฟฟ้า
+            </p>
+
+            <p>
+                ใช้สูตร
+            </p>
+
+            <div class="formula">
+                P = V × I
+            </div>
+
+            <p>
+                แทนค่า
+            </p>
+
+            <div class="formula">
+                P = 12 × 2
+            </div>
+
+            <p>
+                ดังนั้น
+            </p>
+
+            <div class="formula">
+                P = 24 W
+            </div>
+
+        </div>
+
+        <p>
+            ดังนั้นอุปกรณ์นี้มีกำลังไฟฟ้า
+            <strong>24 วัตต์</strong>
+        </p>
+
+
+        <h2>กำลังไฟฟ้าสูงหมายความว่าอะไร?</h2>
+
+        <p>
+            โดยทั่วไป หากอุปกรณ์มีกำลังไฟฟ้าสูงกว่า
+            หมายความว่าอุปกรณ์นั้นมีอัตราการใช้หรือถ่ายโอนพลังงาน
+            ต่อหน่วยเวลาสูงกว่า
+        </p>
+
+        <p>
+            ตัวอย่างเช่น หลอดไฟ 100 W
+            มีกำลังไฟฟ้าสูงกว่าหลอดไฟ 10 W
+            หากเปรียบเทียบภายใต้เงื่อนไขการทำงานที่เหมาะสม
+        </p>
+
+        <p>
+            อย่างไรก็ตาม กำลังไฟฟ้าไม่ควรถูกนำไปตีความว่า
+            อุปกรณ์ที่มีกำลังสูงกว่าจะทำงานได้ดีกว่าเสมอ
+            เพราะอุปกรณ์แต่ละชนิดมีหน้าที่แตกต่างกัน
+        </p>
+
+
+        <h2>กำลังไฟฟ้าเกี่ยวข้องกับค่าไฟอย่างไร?</h2>
+
+        <p>
+            เรื่องนี้เป็นสิ่งที่หลายคนน่าจะสงสัยมากที่สุด
+        </p>
+
+        <p>
+            ค่าไฟไม่ได้คิดจากกำลังไฟฟ้าเพียงอย่างเดียว
+            แต่เกี่ยวข้องกับ
+            <strong>พลังงานไฟฟ้าที่ใช้ตลอดช่วงเวลา</strong>
+        </p>
+
+        <p>
+            หน่วยที่เราเห็นในการใช้ไฟฟ้าภายในบ้านคือ
+            <strong>กิโลวัตต์-ชั่วโมง (kWh)</strong>
+        </p>
+
+        <p>
+            1 กิโลวัตต์ (kW) เท่ากับ 1,000 วัตต์
+        </p>
+
+        <div class="formula">
+            1 kW = 1,000 W
+        </div>
+
+
+        <h2>ตัวอย่างการใช้พลังงานไฟฟ้า</h2>
+
+        <div class="example">
+
+            <p>
+                สมมติว่าเครื่องใช้ไฟฟ้ามีกำลัง
+                <strong>1,000 W</strong>
+                หรือ
+                <strong>1 kW</strong>
+            </p>
+
+            <p>
+                หากเปิดใช้งานเป็นเวลา
+                <strong>2 ชั่วโมง</strong>
+            </p>
+
+            <p>
+                พลังงานที่ใช้จะเป็น
+            </p>
+
+            <div class="formula">
+                1 kW × 2 ชั่วโมง = 2 kWh
+            </div>
+
+        </div>
+
+        <p>
+            ดังนั้นการดูเพียงตัวเลขวัตต์
+            ยังไม่สามารถบอกค่าไฟทั้งหมดได้
+            ต้องดูด้วยว่าใช้งานเป็นเวลานานเท่าใด
+        </p>
+
+
+        <h2>กำลังไฟฟ้ากับกฎของโอห์ม</h2>
+
+        <p>
+            เราสามารถนำกฎของโอห์ม
+            มารวมกับสูตรกำลังไฟฟ้าได้
+        </p>
+
+        <p>
+            กฎของโอห์มคือ
+        </p>
+
+        <div class="formula">
+            V = I × R
+        </div>
+
+        <p>
+            และกำลังไฟฟ้าคือ
+        </p>
+
+        <div class="formula">
+            P = V × I
+        </div>
+
+        <p>
+            เมื่อนำความสัมพันธ์เหล่านี้มารวมกัน
+            เราสามารถเขียนสูตรกำลังไฟฟ้าในรูปอื่นได้
+        </p>
+
+
+        <h3>เมื่อรู้กระแสและความต้านทาน</h3>
+
+        <div class="formula">
+            P = I² × R
+        </div>
+
+
+        <h3>เมื่อรู้แรงดันและความต้านทาน</h3>
+
+        <div class="formula">
+            P = V² ÷ R
+        </div>
+
+        <p>
+            สูตรเหล่านี้มีประโยชน์ในการวิเคราะห์วงจร
+            โดยเฉพาะเมื่อเราไม่ได้รู้ค่าของแรงดันและกระแสพร้อมกัน
+        </p>
+
+
+        <h2>ทำไมอุปกรณ์ถึงมีพิกัดกำลังไฟฟ้า?</h2>
+
+        <p>
+            อุปกรณ์ไฟฟ้าแต่ละชนิดถูกออกแบบให้ทำงาน
+            ภายในช่วงที่เหมาะสม
+        </p>
+
+        <p>
+            ตัวอย่างเช่น ตัวต้านทานอาจมีพิกัด
+            0.25 W, 0.5 W, 1 W หรือมากกว่านั้น
+        </p>
+
+        <p>
+            หากอุปกรณ์ต้องรับกำลังมากกว่าพิกัด
+            อาจทำให้อุปกรณ์ร้อนเกินไป
+            และเกิดความเสียหายได้
+        </p>
+
+        <div class="important">
+            <strong>ข้อควรจำ:</strong>
+            ค่า W ที่เขียนบนอุปกรณ์เป็นข้อมูลสำคัญ
+            ควรเลือกอุปกรณ์ให้เหมาะสมกับกำลังไฟฟ้า
+            ที่ต้องใช้งาน
+        </div>
+
+
+        <h2>ตัวอย่างกำลังไฟฟ้าในชีวิตประจำวัน</h2>
+
+        <ul>
+            <li>หลอดไฟ LED อาจใช้กำลังไม่กี่วัตต์ถึงหลายสิบวัตต์</li>
+            <li>ที่ชาร์จโทรศัพท์อาจจ่ายกำลังได้หลายสิบวัตต์</li>
+            <li>คอมพิวเตอร์อาจใช้กำลังหลายร้อยวัตต์</li>
+            <li>เครื่องทำน้ำอุ่นอาจใช้กำลังระดับหลายพันวัตต์</li>
+            <li>มอเตอร์ไฟฟ้าขนาดใหญ่สามารถมีกำลังสูงกว่านี้มาก</li>
+        </ul>
+
+
+        <h2>กำลังไฟฟ้าไม่ได้มีแค่ในระบบ DC</h2>
+
+        <p>
+            สูตร <strong>P = V × I</strong>
+            เป็นความสัมพันธ์พื้นฐานสำหรับกรณีไฟฟ้ากระแสตรง
+            และยังใช้เป็นพื้นฐานในการทำความเข้าใจระบบไฟฟ้า
+        </p>
+
+        <p>
+            สำหรับระบบ AC จริง
+            โดยเฉพาะวงจรที่มีตัวเหนี่ยวนำหรือตัวเก็บประจุ
+            การคำนวณกำลังไฟฟ้าอาจต้องพิจารณา
+            <strong>Power Factor</strong>
+            และชนิดของกำลังเพิ่มเติม
+        </p>
+
+        <p>
+            ดังนั้นการคำนวณระบบ AC จริงอาจซับซ้อนกว่า
+            สูตรพื้นฐานที่เราใช้ในบทความนี้
+        </p>
+
+
+        <div class="summary">
+
+            <h2>สรุป</h2>
+
+            <p>
+                <strong>กำลังไฟฟ้า (Power)</strong>
+                คืออัตราการใช้หรือถ่ายโอนพลังงานไฟฟ้าต่อหน่วยเวลา
+            </p>
+
+            <p>
+                ใช้สัญลักษณ์ <strong>P</strong>
+                และมีหน่วยเป็น <strong>วัตต์ (W)</strong>
+            </p>
+
+            <p>
+                สูตรพื้นฐานคือ
+            </p>
+
+            <div class="formula">
+                P = V × I
+            </div>
+
+            <p>
+                และสามารถเชื่อมโยงกับกฎของโอห์มได้ เช่น
+            </p>
+
+            <div class="formula">
+                P = I² × R
+            </div>
+
+            <div class="formula">
+                P = V² ÷ R
+            </div>
+
+            <p>
+                การเข้าใจกำลังไฟฟ้าจะช่วยให้เราเข้าใจ
+                เรื่องการใช้พลังงานไฟฟ้า ค่าไฟ
+                พิกัดอุปกรณ์ และการเลือกอุปกรณ์ให้เหมาะสม
+            </p>
+
+            <p>
+                เรื่องต่อไปคือ
+                <strong>ตัวต้านทานและการอ่านค่าสีตัวต้านทาน</strong>
+            </p>
+
+        </div>
+
+    </article>
+
+</main>
+
+<footer>
+    © 2026 Knowledge Hub
+</footer>
+
+</body>
+</html>
